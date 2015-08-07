@@ -3,6 +3,7 @@ module.exports = {
   worker: require('./worker'),
   validation: require('./validation'),
   authorization: require('./authorization'),
+  proxy: require('./proxy'),
   roles:
     team: [
       'admin',

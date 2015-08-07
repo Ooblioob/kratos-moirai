@@ -22,7 +22,6 @@ module.exports = (api, validation, couchUtils) ->
   emptyResolve = () ->
     Promise.resolve()
 
-
   moirai.setClusterKeys = (clusterId, keys) ->
     url = '/moirai/clusters/'+clusterId.replace('cluster_', '')+'/keys'
     return moirai.moiraiClient.put({url: url, json: keys, body_only: true})

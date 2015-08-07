@@ -3,36 +3,22 @@ moirai = require('../lib/authorization')
 describe '_is_moirai_team_admin', () ->
   beforeEach () ->
     this.auth = {
-      _has_resource_role: jasmine.createSpy('_has_resource_role'),
       _is_team_admin: jasmine.createSpy('_is_team_admin'),
 
     }
     this.moirai = moirai({auth: this.auth})
 
-  it 'returns true if the user both has the moirai|user role and is a team admin', () ->
-    this.auth._has_resource_role.andReturn(true)
+  it 'returns true if the user is a team admin', () ->
     this.auth._is_team_admin.andReturn(true)
 
     cut = this.moirai._is_moirai_team_admin
 
     actual = cut('actor', 'team')
 
-    expect(this.auth._has_resource_role).toHaveBeenCalledWith('actor', 'moirai', 'user')
     expect(this.auth._is_team_admin).toHaveBeenCalledWith('actor', 'team')
     expect(actual).toBe(true)
 
-  it 'returns false if the user does not have the moirai|user role', () ->
-    this.auth._has_resource_role.andReturn(false)
-    this.auth._is_team_admin.andReturn(true)
-
-    cut = this.moirai._is_moirai_team_admin
-
-    actual = cut('actor', 'team')
-
-    expect(actual).toBe(false)
-
   it 'returns false if the user is not a team admin', () ->
-    this.auth._has_resource_role.andReturn(true)
     this.auth._is_team_admin.andReturn(false)
 
     cut = this.moirai._is_moirai_team_admin

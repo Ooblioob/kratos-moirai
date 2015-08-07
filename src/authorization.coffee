@@ -15,6 +15,5 @@ module.exports = (validation) ->
       return validation.auth.is_kratos_system_user(actor)
 
     _is_moirai_team_admin: (actor, team) ->
-        return validation.auth._has_resource_role(actor, 'moirai', 'user') and
-               validation.auth._is_team_admin(actor, team)
+        return validation.auth._is_team_admin(actor, team)
   }

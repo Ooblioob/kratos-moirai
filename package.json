@@ -1,0 +1,23 @@
+{
+  "name": "kratos-moirai",
+  "description": "github.com plugin for kratos",
+  "author": "David Greisen <david.greisen@cfpb.gov",
+  "scripts": {
+    "test": "icake test",
+    "specs": "icake -s test"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "lib/index",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "iced-coffee-script": "1.8.0-e",
+    "jasmine-node": "1.14.5",
+    "istanbul": "0.3.15",
+    "coveralls": "2.11.2",
+    "express": "4.10.4"
+  },
+  "engine": "node >= 0.4.1"
+}

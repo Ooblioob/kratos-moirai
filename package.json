@@ -11,6 +11,13 @@
   },
   "main": "lib/index",
   "dependencies": {
+    "pantheon-helpers": "git+https://github.com/cfpb/pantheon-helpers.git#v0.1.0",
+    "underscore": "1.7.0",
+    "iced-runtime": "1.0.2",
+    "request": "2.49.0",
+    "parse-links": "0.1.0",
+    "node-uuid": "1.4.2",
+    "slug": "0.9.1"
   },
   "devDependencies": {
     "iced-coffee-script": "1.8.0-e",

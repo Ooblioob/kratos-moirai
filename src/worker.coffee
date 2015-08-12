@@ -9,7 +9,7 @@ module.exports = (api, validation, couchUtils) ->
   auth = validation.auth
   conf = couchUtils.conf
   moiraiConf = conf.RESOURCES.MOIRAI
-  couchClient = couchUtils.get_system_user()
+  couchClient = couchUtils.nano_system_user
 
   moirai = {}
 
